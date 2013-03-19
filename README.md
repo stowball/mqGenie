@@ -24,3 +24,7 @@ A second function, `mqAdjust` is made available, which allows you to re-calculat
 2. If you develop in Chrome or Safari, write your media queries as you always have. If you use another browser, subtract `mqGenie.width` from the browser's reported viewport width.
 
 3. If you have media queries triggering events in JavaScript, such as with enquire.js, use `mqAdjust(string)` as opposed to `string`
+
+---
+
+Minified version created with YUI Compressor (http://www.refresh-sf.com/yui/)
