@@ -1,5 +1,5 @@
 /*
-* mqGenie v0.2.1
+* mqGenie v0.2.2
 *
 * Adjusts CSS media queries in browsers that include the scrollbar's width in the viewport width so they fire at the intended size
 *
@@ -105,22 +105,20 @@ var mqGenie = (function() {
 		
 		if (window.getComputedStyle)
 			props.fontSize = parseFloat(window.getComputedStyle(html).getPropertyValue('font-size'));
-				
+		
 		var stylesheets = cssjs.getStylesheets(),
 			i = 0;
 		
 		for (i; i < stylesheets.length; i++) {
 			mediaQueries = cssjs.getMediaQueries(stylesheets[i]);
-			
 			for (var j = 0; j < mediaQueries.length; j++) {
 				mediaQueryText = mediaQueries[j].media.mediaText.replace(/\d+px/gi, function(c) {
 					return parseInt(c, 10) + props.width + 'px';
 				});
 				
-				mediaQueryText = mediaQueryText.replace(/\d+em/gi, function(c) {
+				mediaQueryText = mediaQueryText.replace(/\d.+?em/gi, function(c) {
 					return ((parseFloat(c) * props.fontSize) + props.width) / props.fontSize + 'em';
 				});
-				
 				mediaQueries[j].media.mediaText = mediaQueryText;
 			}
 		};
@@ -138,7 +136,7 @@ var mqAdjust = function(mediaQuery) {
 		return parseInt(c, 10) + mqGenie.width + 'px';
 	});
 	
-	mq = mq.replace(/\d+em/gi, function(c) {
+	mq = mq.replace(/\d.+?em/gi, function(c) {
 		return ((parseFloat(c) * mqGenie.fontSize) + mqGenie.width) / mqGenie.fontSize + 'em';
 	});
 	
