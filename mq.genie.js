@@ -96,17 +96,16 @@
 			if ('WebkitAppearance' in html.style) {
 				var chromeRX = /Chrome\/(\d*?\.\d*?\.\d*?\.\d*?)\s/g,
 					chrome = navigator.userAgent.match(chromeRX),
-					chromeVersion,
-					int = parseInt;
+					chromeVersion;
 				
 				if (chrome) {
 					chrome = chrome[0].replace(chromeRX, '$1');
 					chromeVersion = chrome.split('.');
 					
 					// http://jsperf.com/loop-vs-explicit-assignment
-					chromeVersion[0] = int(chromeVersion[0]);
-					chromeVersion[2] = int(chromeVersion[2]);
-					chromeVersion[3] = int(chromeVersion[3]);
+					chromeVersion[0] = parseInt(chromeVersion[0]);
+					chromeVersion[2] = parseInt(chromeVersion[2]);
+					chromeVersion[3] = parseInt(chromeVersion[3]);
 					
 					if (chromeVersion[0] <= 29) {
 						if (chromeVersion[0] === 29 && chromeVersion[2] < 1548 && chromeVersion[3] < 57) {
@@ -136,7 +135,7 @@
 					mediaQueries = cssjs.getMediaQueries(stylesheets[i]);
 					for (var j = 0; j < mediaQueries.length; j++) {
 						mediaQueryText = mediaQueries[j].media.mediaText.replace(/\d+px/gi, function(c) {
-							return int(c, 10) + props.width + 'px';
+							return parseInt(c, 10) + props.width + 'px';
 						});
 						
 						mediaQueryText = mediaQueryText.replace(/\d.+?em/gi, function(c) {
