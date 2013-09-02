@@ -27,4 +27,4 @@ A second function, `mqAdjust` is made available, which allows you to re-calculat
 
 ---
 
-Minified version created with YUI Compressor (http://www.refresh-sf.com/yui/)
+Minified version created with UglifyJS (http://jscompress.com)
