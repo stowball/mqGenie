@@ -1,0 +1,308 @@
+html, body {
+	border: 0;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: url(../images/grid.png) no-repeat 0 0;
+	overflow-y: scroll;
+	-ms-overflow-style: scrollbar;
+}
+
+body {
+	position: relative;
+}
+
+#mqgenie, #desc, #mq {
+	background: #400000;
+	font-size: 14px;
+	height: 99px;
+	left: 100px;
+	opacity: 0.8;
+	position: absolute;
+	top: 100px;
+	width: 99px;
+}
+
+#mqgenie, #desc {
+	background: #ffbfbf;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: monospace;
+	line-height: 25px;
+	padding: 10px;
+	top: 200px;
+	width: 199px;
+}
+
+#desc {
+	background: #fff;
+	font-family: sans-serif;
+	height: auto;
+	max-width: 1399px;
+	min-height: 99px;
+	opacity: 0.9;
+	width: 80%;
+	top: 300px;
+}
+
+p {
+	margin: 0 0 5px;
+}
+
+#mq:after {
+	color: #fff;
+	content: '>= 200px';
+	font-size: 16px;
+	left: 0;
+	margin-top: -8px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 99px;
+}
+
+@media (min-width: 300px) {
+	#mq {
+		background: #8c0000;
+		width: 199px;
+	}
+	
+	#mq:after {
+		content: '>= 300px';
+	}
+}
+
+@media (min-width: 320px) {
+	#mq {
+		background: #b20000;
+		width: 219px;
+	}
+	
+	#mq:after {
+		content: '>= 320px';
+	}
+}
+
+@media (min-width: 360px) {
+	#mq {
+		background: #b22d00;
+		width: 259px;
+	}
+	
+	#mq:after {
+		content: '>= 360px';
+	}
+}
+
+@media (min-width: 400px) {
+	#mq {
+		background: #b25900;
+		width: 299px;
+	}
+	
+	#mq:after {
+		content: '>= 400px';
+	}
+}
+
+@media (min-width: 480px) {
+	#mq {
+		background: #b28500;
+		width: 379px;
+	}
+	
+	#mq:after {
+		content: '>= 480px';
+	}
+}
+
+@media (min-width: 500px) {
+	#mq {
+		background: #b2b200;
+		width: 399px;
+	}
+	
+	#mq:after {
+		content: '>= 500px';
+	}
+}
+
+@media (min-width: 533px) {
+	#mq {
+		background: #85b200;
+		width: 432px;
+	}
+	
+	#mq:after {
+		content: '>= 533px';
+	}
+}
+
+@media (min-width: 568px) {
+	#mq {
+		background: #59b200;
+		width: 467px;
+	}
+	
+	#mq:after {
+		content: '>= 568px';
+	}
+}
+
+@media (min-width: 598px) {
+	#mq {
+		background: #2db200;
+		width: 497px;
+	}
+	
+	#mq:after {
+		content: '>= 598px';
+	}
+}
+
+@media (min-width: 600px) {
+	#mq {
+		background: #00b200;
+		width: 499px;
+	}
+	
+	#mq:after {
+		content: '>= 600px';
+	}
+}
+
+@media (min-width: 700px) {
+	#mq {
+		background: #00b22d;
+		width: 599px;
+	}
+	
+	#mq:after {
+		content: '>= 700px';
+	}
+}
+
+@media (min-width: 768px) {
+	#mq {
+		background: #00b259;
+		width: 667px;
+	}
+	
+	#mq:after {
+		content: '>= 768px';
+	}
+}
+
+@media (min-width: 800px) {
+	#mq {
+		background: #00b285;
+		width: 699px;
+	}
+	
+	#mq:after {
+		content: '>= 800px';
+	}
+}
+
+@media (min-width: 900px) {
+	#mq {
+		background: #00b2b2;
+		width: 799px;
+	}
+	
+	#mq:after {
+		content: '>= 900px';
+	}
+}
+
+@media (min-width: 1000px) {
+	#mq {
+		background: #0085b2;
+		width: 899px;
+	}
+	
+	#mq:after {
+		content: '>= 1000px';
+	}
+}
+
+@media (min-width: 1024px) {
+	#mq {
+		background: #0059b2;
+		width: 923px;
+	}
+	
+	#mq:after {
+		content: '>= 1024px';
+	}
+}
+
+@media (min-width: 1100px) {
+	#mq {
+		background: #002db2;
+		width: 999px;
+	}
+	
+	#mq:after {
+		content: '>= 1100px';
+	}
+}
+
+@media (min-width: 1200px) {
+	#mq {
+		background: #0000b2;
+		width: 1099px;
+	}
+	
+	#mq:after {
+		content: '>= 1200px';
+	}
+}
+
+@media (min-width: 1280px) {
+	#mq {
+		background: #2d00b2;
+		width: 1179px;
+	}
+	
+	#mq:after {
+		content: '>= 1280px';
+	}
+}
+
+@media (min-width: 1300px) {
+	#mq {
+		background: #5900b2;
+		width: 1199px;
+	}
+	
+	#mq:after {
+		content: '>= 1300px';
+	}
+}
+
+@media (min-width: 1400px) {
+	#mq {
+		background: #8500b2;
+		width: 1299px;
+	}
+	
+	#mq:after {
+		content: '>= 1400px';
+	}
+}
+
+@media (min-width: 1500px) {
+	#mq {
+		background: #b200b2;
+		width: 1399px;
+	}
+	
+	#mq:after {
+		content: '>= 1500px';
+	}
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Viewport Tester with mqGenie</title>
+	<link href="css/all.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="js/mq.genie.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-43046462-1', 'stowball.github.io');
+		ga('send', 'pageview');
+	</script>
+</head>
+
+<body>
+	<div id="mq"></div>
+	<div id="mqgenie"></div>
+	<div id="desc"><p><a href="https://github.com/stowball/mqGenie">Get <b>mqGenie</b> on GitHub</a></p></div>
+	
+	<script>
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('mqgenie').innerHTML =
+				'adjusted: ' + mqGenie.adjusted + '<br />' + 
+				'font-size: ' + mqGenie.fontSize + 'px<br />' + 
+				'adjustment-width: ' + mqGenie.width + 'px'
+			
+			var $desc = document.getElementById('desc')
+				originalContent = $desc.innerHTML;
+			
+			if (mqGenie.adjusted) {
+				$desc.innerHTML =
+					'<p>Notice how the coloured block reacts and snaps to the appropriate grid line when the viewport hits it?</p>' +
+					'<p>That wouldn&apos;t have happened in this browser without <b>mqGenie</b>. <a href="no-mqgenie.html">See for yourself by comparing it</a>.</p>' +
+					originalContent;
+			}
+			else {
+				$desc.innerHTML =
+					'<p>Your browser doesn&apos;t need its media queries adjusted, so <b>mqGenie</b> did nothing.</p>' +
+					'<p>It behaves identically to if <a href="no-mqgenie.html">mqGenie wasn&apos;t included</a>.</p>' +
+					originalContent;
+			}
+		});
+	})();
+	</script>
+</body>
+</html>

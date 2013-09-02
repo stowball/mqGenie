@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Viewport Tester without mqGenie</title>
+	<link href="css/all.css" rel="stylesheet" type="text/css" media="all" />
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-43046462-1', 'stowball.github.io');
+		ga('send', 'pageview');
+	</script>
+</head>
+
+<body>
+	<div id="mq"></div>
+	<div id="mqgenie"></div>
+	<div id="desc"><p><a href="https://github.com/stowball/mqGenie">Get <b>mqGenie</b> on GitHub</a></p></div>
+	
+	<script>
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			var html = document.documentElement,
+				width = window.innerWidth - html.clientWidth,
+				adjusted = true,
+				$desc = document.getElementById('desc')
+				originalContent = $desc.innerHTML;;
+			
+			document.getElementById('mqgenie').innerHTML = 
+				'adjusted: false<br />' + 
+				'font-size: ' + parseFloat(window.getComputedStyle(html).getPropertyValue('font-size')) + 'px<br />' + 
+				'adjustment-width: ' + width + 'px'
+			
+			if ('WebkitAppearance' in html.style) {
+				var chromeRX = /Chrome\/(\d*?\.\d*?\.\d*?\.\d*?)\s/g,
+					chrome = navigator.userAgent.match(chromeRX),
+					chromeVersion;
+				
+				if (chrome) {
+					chrome = chrome[0].replace(chromeRX, '$1');
+					chromeVersion = chrome.split('.');
+					chromeVersion[0] = parseInt(chromeVersion[0]);
+					chromeVersion[2] = parseInt(chromeVersion[2]);
+					chromeVersion[3] = parseInt(chromeVersion[3]);
+					
+					if (chromeVersion[0] <= 29) {
+						if (chromeVersion[0] === 29 && chromeVersion[2] < 1548 && chromeVersion[3] < 57) {
+							adjusted = false;
+						}
+						else if (chromeVersion[0] < 29) {
+							adjusted = false;
+						}
+					}
+				}
+				else {
+					adjusted = false;
+				}
+			}
+			
+			if (width > 0 && adjusted) {
+				$desc.innerHTML =
+					'<p>Notice how the coloured block doesn&apos;t snap to the appropriate grid line when the viewport hits it?</p>' +
+					'<p>That&apos; because the browser is including the scrollbar width (' + width + 'px) in the viewport width. By using <b>mqGenie</b>, this would be fixed. <a href="index.html">See for yourself by comparing it</a>.</p>';
+			}
+			else {
+				$desc.innerHTML =
+					'<p>Your browser doesn&apos;t need its media queries adjusted.</p>';
+			}
+		});
+	})();
+	</script>
+</body>
+</html>
