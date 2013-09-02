@@ -1,5 +1,5 @@
 /*!
-* mqGenie v0.4
+* mqGenie v0.4.1
 *
 * Adjusts CSS media queries in browsers that include the scrollbar's width in the viewport width so they fire at the intended size
 *
@@ -119,25 +119,27 @@
 					stylesheetsLength = stylesheets.length,
 					i = 0,
 					mediaQueries,
-					mediaQueriesLength,
-					mediaQueryText;
+					mediaQueriesLength;
 				
 				for (i; i < stylesheetsLength; i++) {
 					mediaQueries = getMediaQueries(stylesheets[i]);
 					mediaQueriesLength = mediaQueries.length;
 					
 					for (var j = 0; j < mediaQueriesLength; j++) {
-						mediaQueryText = mediaQueries[j].media.mediaText.replace(/\d+px/gi, function(c) {
-							return parseInt(c, 10) + props.width + 'px';
+						mediaQueries[j].media.mediaText = mediaQueries[j].media.mediaText.replace(/m(in|ax)-width:\s*(\d|\.)+(px|em)/gi, function(strA) {
+							if (strA.match('px')) {
+								return strA.replace(/\d+px/gi, function(strB) {
+									return parseInt(strB, 10) + props.width + 'px';
+								});
+							}
+							else {
+								return strA.replace(/\d.+?em/gi, function(strB) {
+									return ((parseFloat(strB) * props.fontSize) + props.width) / props.fontSize + 'em';
+								});
+							}
 						});
-						
-						mediaQueryText = mediaQueryText.replace(/\d.+?em/gi, function(c) {
-							return ((parseFloat(c) * props.fontSize) + props.width) / props.fontSize + 'em';
-						});
-						
-						mediaQueries[j].media.mediaText = mediaQueryText;
 					}
-				};
+				}
 			}
 			
 			return props;
