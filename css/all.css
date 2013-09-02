@@ -45,8 +45,14 @@ body {
 	max-width: 1399px;
 	min-height: 99px;
 	opacity: 0.9;
-	width: 80%;
+	width: 60%;
 	top: 300px;
+}
+
+@media (min-width: 400px) {
+	#desc {
+		width: 70%;
+	}
 }
 
 p {
