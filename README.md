@@ -25,9 +25,17 @@ It returns a JavaScript object called `mqGenie`, which contains the following pr
 
 A second function, `mqAdjust` is made available, which allows you to re-calculate media queries that are written in JavaScript. Simply pass `mqAdjust` the media query string and it will return one that's adjusted appropriately.
 
+#### Do we need it?
+
+Consider mqGenie as **progressive enhancement**.
+
+Ideally, your responsive projects will be built in a flexible way, such that a 15-20px difference in media queries shouldn't matter too much.
+
+However, there are definitely times where things can go awry. Fixed-width ads and other modules may rely on more precise measurements, and - while I don't condone targeting device widths specifically - writing a 768px media query and not having it triggered on an a portrait iPad, for example, is a little disconcerting.
+
 ---
 
-**Usage:**
+####Usage:
 
 1. Include mq.genie.min.js in the `<head>` of your document
 
