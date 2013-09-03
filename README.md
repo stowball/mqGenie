@@ -37,7 +37,7 @@ However, there are definitely times where things can go awry. Fixed-width ads an
 
 ####Usage:
 
-1. Include mq.genie.min.js in the `<head>` of your document
+1. Include the tiny (~1.1KB minified and gzipped) mq.genie.js in the `<head>` of your document
 
 2. If you develop in Safari, Chrome/Blink prior to 29.0.1547.57 or Firefox's scrollbar-less RWD View, write your media queries as you always have. mqGenie will adjust them for every other browser as required.
 
