@@ -11,8 +11,8 @@
 *
 * Licensed under the MIT license
 */
-;(function(win, doc) {
-	if (!doc.addEventListener)
+;(function(window, document) {
+	if (!document.addEventListener)
 		return;
 	
 	function processRules(stylesheet, processor) {
@@ -39,8 +39,8 @@
 	}
 	
 	function sameOrigin(url) {
-		var loc = win.location,
-			a = doc.createElement('a');
+		var loc = window.location,
+			a = document.createElement('a');
 		
 		a.href = url;
 		
@@ -56,7 +56,7 @@
 	}
 	
 	function getStylesheets() {
-		var sheets = doc.styleSheets,
+		var sheets = document.styleSheets,
 			sheet,
 			length = sheets.length,
 			i = 0,
@@ -72,16 +72,16 @@
 		return valid;
 	}
 	
-	doc.addEventListener('DOMContentLoaded', function() {
-		win.mqGenie = (function() {
-			var html = doc.documentElement;
+	document.addEventListener('DOMContentLoaded', function() {
+		window.mqGenie = (function() {
+			var html = document.documentElement;
 			
 			html.style.overflowY = 'scroll';
 			
-			var width = win.innerWidth - html.clientWidth,
+			var width = window.innerWidth - html.clientWidth,
 				props = {
 					adjusted: width > 0,
-					fontSize: parseFloat(win.getComputedStyle(html).getPropertyValue('font-size')),
+					fontSize: parseFloat(window.getComputedStyle(html).getPropertyValue('font-size')),
 					width: width					
 				};
 			
@@ -145,7 +145,7 @@
 			return props;
 		})();
 		
-		win.mqAdjust = function(mediaQuery) {
+		window.mqAdjust = function(mediaQuery) {
 			if (!mqGenie.adjusted)
 				return mediaQuery;
 			
