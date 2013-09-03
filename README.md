@@ -5,7 +5,7 @@ mqGenie
 
 ### mqGenie adjusts CSS media queries in browsers that include the scrollbar's width in the viewport width so they fire at the intended size
 
-WebKit browsers (and Chrome/Blink prior to 29.0.1547.57) are the only browsers that don't include the scrollbar in the viewport. While this is technically incorrect (http://www.w3.org/TR/css3-mediaqueries/#width), it makes sense as mobile devices don't have scrollbars.
+WebKit browsers (and Chrome/Blink prior to 29.0.1547.57) are the only browsers that don't include the scrollbar in the viewport. While this is technically incorrect (http://www.w3.org/TR/css3-mediaqueries/#width), it makes sense since scrollbar widths vary across platforms and in the case of "mobile" don't exist.
 
 However, it means that the media queries every Windows developer - and Mac developers who enable scrollbars - write actually fire at a different size when viewed on a mobile device or another OS.
 
