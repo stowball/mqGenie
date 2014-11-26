@@ -22,8 +22,7 @@ It returns a JavaScript object called `mqGenie`, which contains the following pr
 * `adjusted` (boolean - whether your media queries were adusted)
 * `fontSize` (the computed HTML font-size)
 * `width` (the width adjusted by)
-
-A second function, `mqAdjust` is made available, which allows you to re-calculate media queries that are written in JavaScript. Simply pass `mqAdjust` the media query string and it will return one that's adjusted appropriately.
+* `adjustMediaQuery(media-query)` (function) allows you to re-calculate media queries that are written in JavaScript. Simply pass `adjustMediaQuery` the media query string and it will return one that's adjusted appropriately.
 
 #### Do we need it?
 
@@ -43,10 +42,10 @@ However, there are definitely times where things can go awry. Fixed-width ads an
 
 3. If you use another browser (or have scrollbars enabled on Mac), subtract `mqGenie.width` from the browser's reported viewport width. You can use my [Viewport Genie bookmarklet](https://github.com/stowball/Viewport-Genie) to tell you the "actual" viewport size.
 
-4. If you have media queries triggering events in JavaScript, such as with [enquire.js](http://wicky.nillia.ms/enquire.js/), use `mqAdjust(mq-string)` as opposed to `mq-string`
+4. If you have media queries triggering events in JavaScript, such as with [enquire.js](http://wicky.nillia.ms/enquire.js/), use `adjustMediaQuery(mq-string)` as opposed to `mq-string`
 
 ---
 
-Copyright (c) 2013 Matt Stow    
+Copyright (c) 2014 Matt Stow    
 Licensed under the MIT license (see LICENSE for details)    
 Minified version created with UglifyJS (http://jscompress.com/)
