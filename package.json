@@ -1,0 +1,24 @@
+{
+  "name": "mq-genie",
+  "version": "1.0.0",
+  "description": "Adjusts CSS media queries in browsers that include the scrollbar width in the viewport width so they fire at the intended size",
+  "main": "mq.genie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecsea/mqGenie.git"
+  },
+  "keywords": [
+    "css",
+    "scrollbar",
+    "media-query"
+  ],
+  "author": "Claudio Cardinale cardi@thecsea.it",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecsea/mqGenie/issues"
+  },
+  "homepage": "https://github.com/thecsea/mqGenie#readme"
+}
