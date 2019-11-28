@@ -128,9 +128,6 @@
 							}
 						}
 					}
-					else {
-						props.adjusted = false;
-					}
 					
 					if (!props.adjusted)
 						return props;
