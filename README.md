@@ -34,7 +34,7 @@ However, there are definitely times where things can go awry. Fixed-width ads an
 
 ---
 
-####Usage:
+#### Usage:
 
 1. Include the tiny (~1.1KB minified and gzipped) mq.genie.js in the `<head>` of your document
 
